@@ -13,12 +13,6 @@ const (
 	EventPut                     // iota == 2; implicitly repeat
 )
 
-// TransactionLogger is an interface for logging transactions for PUT and DELETE events.
-type TransactionLogger interface {
-	WriteDelete(key string)
-	WritePut(key string, value string)
-}
-
 type Event struct {
 	Sequence  uint64    // A unique record ID
 	EventType EventType // The action taken
